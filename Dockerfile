@@ -5,9 +5,9 @@
 
 FROM alpine:latest
 
-ARG PTN_VERSION
+ARG PTT_VERSION
 
-ENV PTN_FILENAME=PtTracker-linux.zip
+ENV PTT_FILENAME=PtTracker-linux.zip
 
 # install tools
 RUN apk add --update wget bash
@@ -16,16 +16,14 @@ RUN mkdir -p /pt-tracker
 
 WORKDIR /pt-tracker
 
-RUN wget https://github.com/bTayFla/PtTracker/releases/download/${PTN_VERSION}/${PTN_FILENAME}
+RUN wget https://github.com/bTayFla/PtTracker/releases/download/${PTT_VERSION}/${PTT_FILENAME}
 
 # unzip the app
-RUN unzip ${PTN_FILENAME} -j \
-  ; rm ${PTN_FILENAME} \
+RUN unzip ${PTT_FILENAME} -j \
+  ; rm ${PTT_FILENAME} \
   ; chmod +x PtTracker
 
-# add the application source to the image
-COPY start /pt-notifications
-RUN chmod +x /pt-notifications/PtTracker
+RUN chmod +x /pt-tracker/PtTracker
 
 # tidy up
 RUN rm -rf /tmp/* /var/cache/apk/*
