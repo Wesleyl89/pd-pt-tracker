@@ -5,9 +5,9 @@
 
 FROM alpine:latest
 
-ARG PTT_VERSION
-
-ENV PTT_FILENAME=PtTracker-linux.zip
+ARG PTT_VERSION=${PTT_VERSION:-2.2.2}
+ENV PTT_VERSION ${PTT_VERSION}
+ENV PTT_FILENAME=PtTracker.v${PTT_VERSION}.Linux.zip
 
 # install tools
 RUN apk add --update wget bash
