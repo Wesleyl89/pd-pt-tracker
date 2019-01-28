@@ -10,7 +10,7 @@ ENV PTT_VERSION ${PTT_VERSION}
 ENV PTT_FILENAME=PtTracker.v${PTT_VERSION}.Linux.zip
 
 # install tools
-RUN apk add --update wget bash
+RUN apt-get update && apt-get install -y wget unzip && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /pt-tracker
 
