@@ -32,4 +32,4 @@ RUN rm -rf /tmp/* /var/cache/apk/*
 EXPOSE 3000
 
 # run it
-ENTRYPOINT ["PtTracker"]
+ENTRYPOINT ["./PtTracker"]
