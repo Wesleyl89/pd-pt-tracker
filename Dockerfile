@@ -19,7 +19,7 @@ WORKDIR /pt-tracker
 RUN wget https://github.com/bTayFla/PtTracker/releases/download/${PTT_VERSION}/${PTT_FILENAME}
 
 # unzip the app
-RUN unzip ${PTT_FILENAME} -j \
+RUN unzip -j ${PTT_FILENAME} \
   ; rm ${PTT_FILENAME} \
   ; chmod +x PtTracker
 
