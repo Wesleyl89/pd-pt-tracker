@@ -3,7 +3,7 @@
 # build with --build-arg PTT_VERSION=2.2 to define the version number to build
 #
 
-FROM alpine:latest
+FROM ubuntu:latest
 
 ARG PTT_VERSION=${PTT_VERSION:-2.2.2}
 ENV PTT_VERSION ${PTT_VERSION}
